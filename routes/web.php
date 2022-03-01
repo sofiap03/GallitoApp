@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('posts/{user}', [App\http\Controllers\PostController::class, 'index']);
+Route::get('/{user}', [App\http\Controllers\PostController::class, 'index']);
 Route::resource('posts', App\Http\Controllers\PostController::class)
     ->except(['index']);
 
