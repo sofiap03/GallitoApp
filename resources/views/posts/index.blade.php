@@ -6,7 +6,7 @@
     <h1>Publicaciones de {{ $user->name }}</h1>
 
     @forelse($posts as $post)
-    
+
         <div class="card mb-2">
             <div class="card-body">
             <h5 class="card-title">{{ $user->name }}</h5>
