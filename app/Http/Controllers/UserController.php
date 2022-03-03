@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -13,7 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = $User::orderBy('created_at','desc')
+        $users = User::orderBy('created_at','desc')
                     ->simplePaginate(10);
 
         return view('users.index', compact('users'));
@@ -26,7 +28,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('users.create');
     }
 
     /**
@@ -37,7 +39,10 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = new User();
+        $user -> fill($request->input());
+        $user -> password = Hash::make($request->input('password'));
+        $user -> save();
     }
 
     /**

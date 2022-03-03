@@ -26,7 +26,7 @@ class PostController extends Controller
                     ->simplePaginate(2);
 
         return view('posts.index', compact('posts', 'user'));
-        
+
 
     }
 
