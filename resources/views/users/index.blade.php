@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1>Usuarios Registrados en Gallito-App</h1>
+        <h1 class="text-center">Usuarios Registrados en Gallito-App</h1>
 
         @forelse ($users as $user)
         <div class="card mb-2">

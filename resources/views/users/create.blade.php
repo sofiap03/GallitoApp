@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <h1>Registrar un nuevo usuario</h1>
+    <h1 class="text-center">Registrar un nuevo usuario</h1>
 
     {!! Form::open(['route' => 'users.store', 'method' => 'post']) !!}
         <div class="mb-3 form-group">
@@ -24,5 +24,14 @@
 
     {!! Form::close() !!}
 
+</div>
+<div>
+    <footer class="page-footer font-small blue pt-4">
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">Desarrollado en Programación Backend por Sofia Piñuela Mejia ©️ 2022
+
+  <!-- Copyright -->
+
+    </footer>
 </div>
 @endsection

@@ -6,6 +6,9 @@ use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\PostCreateRequest;
+
 class PostController extends Controller
 {
     /**
@@ -15,6 +18,7 @@ class PostController extends Controller
      */
     public function index(User $user)
     {
+
         //echo "Hola ".$user->name;
         /*$posts = Post::where('user_id', $user->id)
                     ->orderBy('created_at','desc')
@@ -46,13 +50,18 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostCreateRequest $request)
     {
+        //TODO: validar
+
         $posts = new Post();
         $posts->fill($request->input());
-        $posts->user_id = 1;
+        $posts->user_id = Auth::id();
         $posts->save();
         //dd($request->input('content'));
+
+        //return redirect(url('/home'));
+        return redirect(route('home'));
     }
 
     /**
@@ -74,7 +83,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return view('posts.edit', compact('post'));
     }
 
     /**
@@ -84,9 +93,14 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(PostCreateRequest $request, Post $post)
     {
-        //
+        //valida PostCreateRequest
+        $post->fill($request->input());
+        $post->save();
+
+        return redirect(route('user.posts', $post->user_id));
+
     }
 
     /**
