@@ -13,6 +13,18 @@
             <a href="">
                 <i class="fa-solid fa-trash-can iconos" style ="color:black;" title="Remover post"></i>
             </a>
+
+            {!! Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'delete']) !!}
+
+            {!! Form::button('<i class="fa-solid fa-trash-can"></i>', [
+                'type' => 'submit',
+                'tittle' => "Remover post",
+                'class' => 'btn btn-danger',
+                'onclick' => "return confirm('¿Esta seguro de eliminar esta publicación?')"
+            ] ) !!}
+
+            {!! Form::close() !!}
+
         </div>
 
     </div>
