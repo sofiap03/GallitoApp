@@ -22,7 +22,7 @@
     <div>
         <footer class="page-footer font-small blue pt-4">
         <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">Desarrollado en Programación Backend por Sofia Piñuela Mejia ©️ 2022
+        <div class="footer-copyright text-center py-3" style="background-color:white; margin: 20px ">Desarrollado en Programación Backend por Sofia Piñuela Mejia ©️ 2022
 
       <!-- Copyright -->
 

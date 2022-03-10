@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div>
+<div class="container">
     <h1 class="text-center">Crear nueva publicación</h1>
 
     @include('layouts.subview-form-errors')
@@ -18,7 +18,7 @@
 <div>
     <footer class="page-footer font-small blue pt-4">
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">Desarrollado en Programación Backend por Sofia Piñuela Mejia ©️ 2022
+    <div class="footer-copyright text-center py-3" style="background-color:white; margin: 20px ">Desarrollado en Programación Backend por Sofia Piñuela Mejia ©️ 2022
 
   <!-- Copyright -->
 

@@ -8,11 +8,9 @@
 
         <div class="text-right">
             <a href="{{ route('posts.edit', $post->id) }}">
-                <i class="fa-solid fa-pen-to-square iconos" style ="color:black;" tittle="Editar post"></i>
+                <i class="btn btn-light fa-solid fa-pen-to-square" style ="color:black;" tittle="Editar post"></i>
             </a>
-            <a href="">
-                <i class="fa-solid fa-trash-can iconos" style ="color:black;" title="Remover post"></i>
-            </a>
+            <br></br>
 
             {!! Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'delete']) !!}
 
