@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-<h1 class="text-center">últimas publicaciones de </h1>
+<h1 class="text-center">Últimas publicaciones de {{ Auth::user()->name }}</h1>
     <div class="row justify-content-center">
             @forelse ($posts as $post)
                 <div class="card mb-3" >
